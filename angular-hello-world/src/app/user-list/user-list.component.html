@@ -1,0 +1,34 @@
+<ul>
+  <li *ngFor="let individualUserName of names">
+    <app-user-item [name]="individualUserName"></app-user-item>
+  </li>
+</ul>
+
+<!--*ngFor-->
+<!--Iterate over a list of items and generate a new tag for each one.-->
+
+<!--Template has one ul and one li with a new *ngFor="let name of names" attribute.-->
+<!--The *ngFor syntax says we want to use the NgFor directive on this attribute.-->
+<!--You can think of NgFor as a 'for' loop.-->
+
+<!--The value states "let name of names". names is our array of names specified in the UserListComponent object.-->
+<!--let name is called a reference-->
+<!--When we say "let name of names", we're saying loop over each element in names and assign each one to a local variable called name.-->
+
+<!--The NgFor directive will render one li tag for each entry found in the names array and declare a local variable name to hold the current item being iterated.-->
+<!--This new variable will then be raplaced inside the Hello {{ name }} snippet-->
+
+<!--KEY-->
+<!--NgFor repeats the element that the ngFor is called. -->
+<!--That is, we put it on the li tag and not the ul tag because we want to repeat the list element (li) and not the list itself (ul). -->
+<!--Note that the capitalization here isn’t a typo: NgFor is the capitalization of the class that implements the logic and ngFor is the “selector” for the attribute we want to use.-->
+
+<!--Passing values-->
+<!--To pass values to a component we use the bracket [] syntax in our template-->
+
+<!--The [name] part designates the Input on the UserItemComponent. -->
+<!--Notice that we’re not passing the literal string "individualUserName" instead we’re passing the value of individualUserName, which is, on each pass,the value of an element of names. -->
+<!--What we are doing: -->
+<!--1.Iterating over names -->
+<!--2.Creating a new UserItemComponent for each element in names and -->
+<!--3.Passing the value of that name into the name Input property on the UserItemComponent-->
